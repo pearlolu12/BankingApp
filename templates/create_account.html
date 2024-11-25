@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+   
+ <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 50px;
+    }
+
+    /* Styling for the form */
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Styling for flash messages */
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 5px 0;
+    }
+
+    a {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    a button {
+        width: auto;
+    }
+</style>
+</head>
+<body>
+    <h2>Create a New Account</h2>
+
+    <form action="/create_account" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="Name" name="Name" pattern="[A-Za-z]+([ '-][A-Za-z]+)*" title="Name should only contain letters, spaces, hyphens, or apostrophes" required><br><br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" pattern="[A-Za-z]+" title="Surname should only contain letters" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+
+
+        <label for="id_number">ID Number:</label>
+        <input type="number" id="id_number" name="id_number" required><br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required placeholder="johndoe123"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="••••••••"><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('index') }}">
+        <button type="button">Back to Login</button>
+    </a>
+</body>
+</html>

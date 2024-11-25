@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Funds</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Transfer Funds</h1>
+        <style>
+            /* General body and font styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0px;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    
+}
+
+/* Header styling */
+.page-header {
+    background-color: #007bff;
+    color: black;
+    text-align: center;
+    padding: 20px 20px;
+    margin-bottom: 30px 30px;
+}
+
+.page-header h1 {
+    margin: 20px;
+    padding: 20px;
+    font-size: 2px;
+    
+}
+
+/* Main container for the form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Form section styling */
+.form-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit button styling */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: black;
+}
+
+/* Footer link styling */
+.page-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link {
+    font-size: 1rem;
+    text-decoration: none:
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+        </style>
+    </header>
+
+    <!-- Transfer Form -->
+    <section>
+        <form method="POST">
+            <!-- Recipient Username input -->
+            <div class="form-group">
+                <label for="recipient_username">Recipient Username:</label>
+                <input type="text" id="recipient_username" name="recipient_username" required>
+            </div>
+
+            <!-- Amount to transfer input -->
+            <div class="form-group">
+                <label for="amount">Amount to Transfer:</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+                {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+            </div>
+
+            <!-- Submit button for transferring -->
+            <div class="form-group">
+                <button type="submit">Transfer</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Link back to the dashboard -->
+    <footer>
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </footer>
+</body>
+
+</html>
