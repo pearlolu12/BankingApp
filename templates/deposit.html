@@ -13,6 +13,11 @@
         <input type="number" name="amount" id="amount" step="0.01" required>
         <button type="submit">Deposit</button>
     </form>
+
+    <!-- Navigation Links -->
+    <a href="{{ url_for('transaction_history') }}">View Transactions</a> |
     <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
 </body>
 </html>
+
+

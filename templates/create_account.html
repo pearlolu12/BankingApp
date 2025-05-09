@@ -93,32 +93,35 @@
 <body>
     <h2>Create a New Account</h2>
 
-    <form action="/create_account" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="Name" name="Name" pattern="[A-Za-z]+([ '-][A-Za-z]+)*" title="Name should only contain letters, spaces, hyphens, or apostrophes" required><br><br>
+<form action="/create_account" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" pattern="[A-Za-z]+([ '-][A-Za-z]+)*" 
+           title="Name should only contain letters, spaces, hyphens, or apostrophes" required><br><br>
 
-        <label for="surname">Surname:</label>
-        <input type="text" id="surname" name="surname" pattern="[A-Za-z]+" title="Surname should only contain letters" required><br><br>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" pattern="[A-Za-z]+" 
+           title="Surname should only contain letters" required><br><br>
 
-        <label for="phone">Phone:</label>
-        <input type="number" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" minlength="10" maxlength="10" pattern="[0-9]{10}" 
+           title="Phone number must be exactly 10 digits" required><br><br>
 
+    <label for="id_number">ID Number:</label>
+    <input type="text" id="id_number" name="id_number" minlength="13" maxlength="13" 
+           pattern="[0-9]{13}" title="ID Number must be exactly 13 digits" required><br><br>
 
-        <label for="id_number">ID Number:</label>
-        <input type="number" id="id_number" name="id_number" required><br><br>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required placeholder="johndoe123"><br><br>
 
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required placeholder="johndoe123"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required placeholder="••••••••"><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required placeholder="••••••••"><br><br>
+    <button type="submit">Create Account</button>
+</form>
 
-        <button type="submit">Create Account</button>
-    </form>
-
-    <br>
-    <a href="{{ url_for('index') }}">
-        <button type="button">Back to Login</button>
-    </a>
+<br>
+<a href="{{ url_for('index') }}">
+    <button type="button">Back to Login</button>
+</a>
 </body>
 </html>

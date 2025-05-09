@@ -1,33 +1,74 @@
 /* Global Styles */
+/* Body Styling */
+/* Text Functions - On Top */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0056b3;
-    margin: 50px;
-    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9; /* Light grey background for a professional feel */
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-h2 {
     color: #333;
-    text-align: center;
-    justify-content: flex-start;
-    
 }
 
-/* Container for forms, dashboard, etc. */
-.dashboard-container {
-    background-color: #fff;
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkblue; /* Dark Blue */
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo and Bank Name Styling */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.bank-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase; /* Adds a professional touch */
+}
+
+.bank-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Form Container */
+.dashboard-container, .login-container, .create-account-container {
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    width: 400px;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
     margin-top: 20px;
 }
 
-/* Form Fields */
+/* Title Styling */
+h1, h2 {
+    background: none; /* Removes any unwanted background */
+    color: #003366; /* Dark Blue */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Input Fields Styling */
 input[type="text"], input[type="password"], input[type="number"], button {
     width: 100%;
     padding: 12px;
@@ -35,106 +76,54 @@ input[type="text"], input[type="password"], input[type="number"], button {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 1rem;
 }
 
+/* Input Focus Styling */
 input[type="text"]:focus, input[type="password"]:focus, input[type="number"]:focus {
-    border-color: #5cb85c;
+    border-color: #003366;
     outline: none;
 }
 
+/* Button Styling */
 button {
-    background-color: #5cb85c;
+    background-color: #007bff; /* Blue Button */
     color: white;
     border: none;
+    padding: 12px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase; /* Professional look */
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Link Styling */
 a {
     color: #007bff;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Login Page */
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Header Styling */
-header {
-    display: flex;
-    justify-content: right; /* Center the logo-container */
-    align-items: right;
-    flex-direction: column; /* Arrange the bank name and logo vertically */
-    background-color: #0044cc;
-    padding: 20px;
-}
-
-/* Logo container - stack name and logo */
-.logo-container {
-    display: flex;
-    flex-direction: column; /* Stack the bank name above the logo */
-    justify-content: right;
-    align-items:right; /* Center both the bank name and logo */
-}
-
-/* Bank Name Styling */
-.bank-name {
-    color: white;
-    font-size: 2rem; /* Adjust size as needed */
-    font-weight: bold;
-    margin-bottom: 10px; /* Space between bank name and logo */
-}
-
-/* Bank Logo Styling */
-.bank-log {
-    max-width: 300px; /* Adjust the size of the logo */
-    height: auto;
-}
-
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Dashboard Page */
-.dashboard-container {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Dashboard Styling */
 .dashboard-container h2, .dashboard-container p {
-    text-align:center;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 .dashboard-container a {
     display: inline-block;
     margin-top: 15px;
     text-align: center;
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -142,53 +131,102 @@ header {
 }
 
 .dashboard-container a:hover {
-    background-color: #1d1f2096;
+    background-color: #218838;
 }
 
 /* Create Account Page */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 form input {
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-size: 1rem;
 }
 
 form button {
-    background-color: #2712b1ec;
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px;
+    padding: 14px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1.1rem;
 }
 
 form button:hover {
-    background-color: #f1f1f1;
+    background-color: #0056b3;
 }
 
-/* Transaction History Page */
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Transaction History Page Styles */
+
+.history-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-ul li {
+.history-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
     background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    padding: 10px;
-    border-radius: 5px;
 }
 
-ul li:nth-child(even) {
-    background-color: #55505042;
+table td {
+    font-size: 14px;
+    color: #333;
 }
 
-ul li:last-child {
-    margin-bottom: 0;
+table td.amount, table td.balance {
+    text-align: right;
+}
+
+table td.date {
+    font-style: italic;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #45a049;
 }
